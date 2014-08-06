@@ -1,0 +1,95 @@
+body {
+	background: #f4f4f4 url(/img/debut-light.png) repeat 0 0;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h1, h2, h3 {
+	font-family: 'Arvo', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+
+}
+
+h3 a:hover {
+	text-decoration: none;
+}
+
+p a:hover,
+h4 a:hover {
+	text-decoration: none;
+	padding-bottom: 1px;
+	border-bottom: 1px solid;
+}
+
+.masthead h3 {
+	line-height: 20px;
+}
+
+.text-align-justify {
+    text-align: justify
+}
+
+/* Custom container */
+.container-narrow {
+	padding: 10px 30px;
+	margin: 0 auto;
+	max-width: 760px;
+	background-color: #fff;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0 0 10px #ccc;
+}
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+/* Main greeting */
+.jumbotron {
+	background-color: transparent;
+	padding: 25px 0;
+}
+.jumbotron h1 {
+	font-size: 72px;
+	line-height: 1;
+	text-shadow: 1px 1px 1px #ccc;
+}
+
+@media (max-width: 440px) {
+	.jumbotron h1 {
+		font-size: 64px;
+	}
+}
+
+@media (max-width: 400px) {
+	.jumbotron h1 {
+		font-size: 48px;
+	}
+}
+
+@media (max-width: 240px) {
+	.jumbotron h1 {
+		font-size: 36px;
+	}
+}
+
+#find-me i {
+	margin-right: 12px;
+	color: #333;
+}
+
+::selection {
+	background-color: #ff8900;
+	color: #fff;
+}
