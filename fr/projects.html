@@ -9,28 +9,20 @@ permalink: fr/projects/
 <h2>Réalisations principales dans GDAL/OGR</h2>
 
 <p>
-Mainteneur de la <a href="http://trac.osgeo.org/gdal/wiki/GdalOgrInJava">couche d'accès Java</a> et sa <a href="http://gdal.org/java">documentation</a>.
+Conception et implémentation de nombreuses fonctionnalités du coeur de GDAL/OGR:
 </p>
-<p>
-Conception et implémentation d'un dialecte SQL <a href="http://gdal.org/ogr/ogr_sql_sqlite.html">SQLite</a> dans OGR.
-</p>
-<p>
-Conception et implémentation du <a href="http://www.gdal.org/structGDALWarpOptions.html#a0ed77f9917bb96c7a9aabd73d4d06e08">multithreading</a> dans la partie calcul de l'algorithme de reprojection d'image.
-</p>
-<p>
-Conception et implémentation du mécanisme <a href="http://gdal.org/gdal_api_proxy.html">GDAL_API_PROXY</a>.
-</p>
-<p>
-Conception et implémentation de la gestion de plusieurs attributs géométriques par
-couche vectorielle, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc41_multiple_geometry_fields">RFC 41</a>.
-</p>
-<p>
-Conception et implémentation du mécanisme pour présenter les sources de données et bandes
-raster de GDAL en tant que zone de mémoire virtuelle, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc45_virtualmem">RFC 45</a>
-</p>
-<p>
-Unification des modèles GDAL et OGR , per <a href="http://trac.osgeo.org/gdal/wiki/rfc46_gdal_ogr_unification">RFC 46</a>, pour GDAL 2.0.
-</p>
+<ul>
+<li>Unification des modèles de pilotes raster et vectoriel, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc46_gdal_ogr_unification">RFC 46</a>, pour GDAL 2.0.</li>
+<li>Utilisation du dialecte SQL de <a href="http://gdal.org/ogr/ogr_sql_sqlite.html">SQLite</a> dans OGR.</li>
+<li>Gestion de plusieurs attributs géométriques par couche vectorielle, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc41_multiple_geometry_fields">RFC 41</a>.</li>
+<li>Gestion des géométries curvilignes, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc49_curve_geometries">RFC 49</a>.</li>
+<li>Gestion de sous-types pour les attributs des objets vectoriels, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc50_ogr_field_subtype">RFC 50</a>.</li>
+<li><a href="http://www.gdal.org/structGDALWarpOptions.html#a0ed77f9917bb96c7a9aabd73d4d06e08">Multithreading</a> dans la partie calcul de l'algorithme de reprojection d'image.</li>
+<li>Mécanisme <a href="http://gdal.org/gdal_api_proxy.html">GDAL_API_PROXY</a>  pour déporter l'exécution d'un driver dans un autre processus.</li>
+<li>Mécanisme pour présenter les sources de données et bandes raster de GDAL en tant que zone de mémoire virtuelle, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc45_virtualmem">RFC 45</a></li>
+<li>Gestion de plusieurs algorithmes de ré-échantillonage dans l'API RasterIO(), selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc51_rasterio_resampling_progress">RFC 51</a></li>
+<li>Améliorations dans le <a href="http://erouault.blogspot.fr/2014/10/warping-overviews-and-warped-overviews.html">rééchantillonage des aperçus et l'utilisation des aperçus par le mécanisme de reprojection</a>.</li>
+</ul>
 <p>
 Rétro-ingénierie du format <a href="https://github.com/rouault/dump_gdbtable/wiki/FGDB-Spec">ESRI FileGDB</a>
 </p>
@@ -111,6 +103,9 @@ Améliorations significatives dans les pilotes OGR suivants :
 <li><a href="http://gdal.org/ogr/drv_sqlite.html">SQLite/SpatiaLite</a></li>
 <li><a href="http://gdal.org/ogr/drv_vrt.html">VRT - Virtual Datasource</a></li>
 </ul>
+<p>
+Mainteneur de la <a href="http://trac.osgeo.org/gdal/wiki/GdalOgrInJava">couche d'accès Java</a> et sa <a href="http://gdal.org/java">documentation</a>.
+</p>
 
 <h2>Réalisations principales dans MapServer</h2>
 
