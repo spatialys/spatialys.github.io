@@ -17,6 +17,7 @@ Design and implementation of many features in the GDAL/OGR core:
 <li>Support for multiple geometry fields per vector layer, per <a href="http://trac.osgeo.org/gdal/wiki/rfc41_multiple_geometry_fields">RFC 41</a>.</li>
 <li>Support for curve geometries, per <a href="http://trac.osgeo.org/gdal/wiki/rfc49_curve_geometries">RFC 49</a>.</li>
 <li>Support for sub-types of attributes of vector features, per <a href="http://trac.osgeo.org/gdal/wiki/rfc50_ogr_field_subtype">RFC 50</a>.</li>
+<li>Support for 64 bit integers for attributes and identifiers of vector features, per <a href="http://trac.osgeo.org/gdal/wiki/rfc31_ogr_64">RFC 31</a>.</li>
 <li><a href="http://www.gdal.org/structGDALWarpOptions.html#a0ed77f9917bb96c7a9aabd73d4d06e08">Multithreading</a> in the computational part of the image warping.</li>
 <li><a href="http://gdal.org/gdal_api_proxy.html">GDAL_API_PROXY</a> mechanism to off-load the execution of a driver in another process.</li>
 <li>Mechanism to expose GDAL datasets and raster bands as virtual memory mappings, per <a href="http://trac.osgeo.org/gdal/wiki/rfc45_virtualmem">RFC 45</a>.</li>
@@ -34,6 +35,7 @@ Writing of new <a href="http://gdal.org/formats_list.html">GDAL (Raster) Drivers
 <ul>
 <li><a href="http://gdal.org/frmt_various.html#ACE2">ACE2</a></li>
 <li><a href="http://gdal.org/frmt_various.html#ADRG">ADRG/ARC Digitilized Raster Graphics (.gen/.thf)</a></li>
+<li><a href="http://osgeo-org.1560.x6.nabble.com/gdal-dev-BPG-driver-td5184178.html">BPG (Better Portable Graphics)</a></li>
 <li><a href="http://gdal.org/frmt_various.html#CTG">USGS LULC Composite Theme Grid</a></li>
 <li><a href="http://gdal.org/frmt_various.html#E00GRID">Arc/Info Export E00 GRID</a></li>
 <li><a href="http://gdal.org/frmt_various.html#ECRGTOC">ECRG Table Of Contents (TOC.xml)</a></li>
@@ -115,7 +117,8 @@ Significant enhancements to the following OGR drivers :
 </ul>
 
 <p>
-Maintainer of the <a href="http://trac.osgeo.org/gdal/wiki/GdalOgrInJava">Java bindings</a> and their <a href="http://gdal.org/java">documentation</a>.
+Maintainer of the <a href="http://trac.osgeo.org/gdal/wiki/GdalOgrInPython">Python bindings</a>,
+ <a href="http://trac.osgeo.org/gdal/wiki/GdalOgrInJava">Java bindings</a> and their <a href="http://gdal.org/java">documentation</a>.
 </p>
 
 <p>
