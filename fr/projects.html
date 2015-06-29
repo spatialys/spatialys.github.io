@@ -18,11 +18,15 @@ Conception et implémentation de nombreuses fonctionnalités du coeur de GDAL/OG
 <li>Gestion des géométries curvilignes, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc49_curve_geometries">RFC 49</a>.</li>
 <li>Gestion de sous-types pour les attributs des objets vectoriels, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc50_ogr_field_subtype">RFC 50</a>.</li>
 <li>Gestion des entiers sur 64 bits en tant qu'attributs et identifiants d'objets vectoriels, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc31_ogr_64">RFC 31</a>.</li>
+<li>Gestion des transactions au niveau de la source de données, selon la <a href="https://trac.osgeo.org/gdal/wiki/rfc54_dataset_transactions">RFC 54</a>.</li>
+<li>Introduction de la précision à la milliseconde des dates, selon la <a href="https://trac.osgeo.org/gdal/wiki/rfc56_millisecond_precision">RFC 56</a>.</li>
 <li><a href="http://www.gdal.org/structGDALWarpOptions.html#a0ed77f9917bb96c7a9aabd73d4d06e08">Multithreading</a> dans la partie calcul de l'algorithme de reprojection d'image.</li>
 <li>Mécanisme <a href="http://gdal.org/gdal_api_proxy.html">GDAL_API_PROXY</a>  pour déporter l'exécution d'un driver dans un autre processus.</li>
 <li>Mécanisme pour présenter les sources de données et bandes raster de GDAL en tant que zone de mémoire virtuelle, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc45_virtualmem">RFC 45</a></li>
 <li>Gestion de plusieurs algorithmes de ré-échantillonage dans l'API RasterIO(), selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc51_rasterio_resampling_progress">RFC 51</a></li>
+<li>Gestion des rasters de très grandes dimensions, selon la <a href="https://trac.osgeo.org/gdal/wiki/rfc26_blockcache">RFC 26</a></li>
 <li>Améliorations dans le <a href="http://erouault.blogspot.fr/2014/10/warping-overviews-and-warped-overviews.html">rééchantillonage des aperçus et l'utilisation des aperçus par le mécanisme de reprojection</a>.</li>
+<li>Mise en conformité du pilote JP2OpenJPEG (JPEG 2000) vis-à-vis des recommandations Inspire pour l'orthoimagerie et gestion du standard GMLJP2 v2.</li>
 </ul>
 <p>
 Rétro-ingénierie du format <a href="https://github.com/rouault/dump_gdbtable/wiki/FGDB-Spec">ESRI FileGDB</a>
@@ -47,11 +51,13 @@ Ecriture de nouveaux <a href="http://gdal.org/formats_list.html">pilotes raster 
 <li><a href="http://gdal.org/frmt_mbtiles.html">MBTiles</a></li>
 <li><a href="http://gdal.org/frmt_ozi.html">OZI OZF2/OZFX3</a></li>
 <li><a href="http://gdal.org/frmt_pdf.html">Geospatial PDF</a></li>
+<li><a href="http://gdal.org/frmt_plmosaic.html">PLMosaic (Mosaiques de Planet Labs)</a></li>
 <li><a href="http://gdal.org/frmt_rasterlite.html">Rasterlite - Rasters dans une BDD SQLite</a></li>
 <li><a href="http://gdal.org/frmt_various.html#RPFTOC">Raster Product Format/RPF (CADRG, CIB)</a></li>
 <li><a href="http://gdal.org/frmt_various.html#SNODAS">Snow Data Assimilation System</a></li>
 <li><a href="http://gdal.org/frmt_various.html#SRTMHGT">SRTM HGT Format</a></li>
 <li><a href="http://gdal.org/frmt_webp.html">WEBP</a></li>
+<li><a href="http://gdal.org/frmt_wmts.html">WMTS (Web Map Tile Service)</a></li>
 <li><a href="http://gdal.org/frmt_xyz.html">ASCII Gridded XYZ</a></li>
 <li><a href="http://gdal.org/frmt_various.html#ZMap">ZMap Plus Grid</a></li>
 </ul>
@@ -73,6 +79,7 @@ Ecriture de nouveaux <a href="http://gdal.org/ogr/ogr_formats.html">pilotes vect
 <li><a href="http://gdal.org/ogr/drv_bna.html">Atlas BNA</a></li>
 <li><a href="http://gdal.org/ogr/drv_cartodb.html">CartoDB</a></li>
 <li><a href="http://gdal.org/ogr/drv_couchdb.html">CouchDB / GeoCouch</a></li>
+<li><a href="http://gdal.org/ogr/drv_csw.html">CSW (Catalog Services for the Web)</a></li>
 <li><a href="http://gdal.org/ogr/drv_edigeo.html">EDIGEO</a></li>
 <li><a href="http://gdal.org/ogr/drv_geomedia.html">Geomedia .mdb</a></li>
 <li><a href="http://gdal.org/ogr/drv_georss.html">GeoRSS</a></li>
@@ -83,12 +90,14 @@ Ecriture de nouveaux <a href="http://gdal.org/ogr/ogr_formats.html">pilotes vect
 <li><a href="http://gdal.org/ogr/drv_idrisi.html">Idrisi Vector (.VCT)</a></li>
 <li><a href="http://gdal.org/ogr/drv_jml.html">OpenJUMP .jml</a></li>
 <li><a href="http://gdal.org/ogr/drv_mdb.html">Access MDB (PGeo et Geomedia)</a></li>
+<li><a href="http://gdal.org/ogr/drv_mongodb.html">MongoDB</a></li>
 <li><a href="http://gdal.org/ogr/drv_ods.html">Open Document Spreadsheet</a></li>
 <li><a href="http://gdal.org/ogr/drv_openair.html">OpenAir</a></li>
 <li><a href="http://gdal.org/ogr/drv_openfilegdb.html">OpenFileGDB</a></li>
 <li><a href="http://gdal.org/ogr/drv_osm.html">OpenStreetMap XML et PBF</a></li>
 <li><a href="http://gdal.org/ogr/drv_pdf.html">Geospatial PDF</a></li>
 <li><a href="http://gdal.org/ogr/drv_pds.html">PDS</a></li>
+<li><a href="http://gdal.org/drv_plscenes.html">PLScenes (Scènes de Planet Labs)</a></li>
 <li><a href="http://gdal.org/ogr/drv_pgdump.html">PostgreSQL SQL dump</a></li>
 <li><a href="http://gdal.org/ogr/drv_segukooa.html">SEG-P1 / UKOOA P1/90</a></li>
 <li><a href="http://gdal.org/ogr/drv_segy.html">SEG-Y</a></li>

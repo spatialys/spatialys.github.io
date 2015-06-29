@@ -18,11 +18,17 @@ Design and implementation of many features in the GDAL/OGR core:
 <li>Support for curve geometries, per <a href="http://trac.osgeo.org/gdal/wiki/rfc49_curve_geometries">RFC 49</a>.</li>
 <li>Support for sub-types of attributes of vector features, per <a href="http://trac.osgeo.org/gdal/wiki/rfc50_ogr_field_subtype">RFC 50</a>.</li>
 <li>Support for 64 bit integers for attributes and identifiers of vector features, per <a href="http://trac.osgeo.org/gdal/wiki/rfc31_ogr_64">RFC 31</a>.</li>
+<li>Support dataset transactions, per <a href="https://trac.osgeo.org/gdal/wiki/rfc54_dataset_transactions">RFC 54</a>.</li>
+<li>Addition of millisecond accuracy for dates, per <a href="https://trac.osgeo.org/gdal/wiki/rfc56_millisecond_precision">RFC 56</a>.</li>
+<li><a href="http://www.gdal.org/structGDALWarpOptions.html#a0ed77f9917bb96c7a9aabd73d4d06e08">Multithreading</a> dans la partie calcul de l'algorithme de reprojection d'image.</li>
+
 <li><a href="http://www.gdal.org/structGDALWarpOptions.html#a0ed77f9917bb96c7a9aabd73d4d06e08">Multithreading</a> in the computational part of the image warping.</li>
 <li><a href="http://gdal.org/gdal_api_proxy.html">GDAL_API_PROXY</a> mechanism to off-load the execution of a driver in another process.</li>
 <li>Mechanism to expose GDAL datasets and raster bands as virtual memory mappings, per <a href="http://trac.osgeo.org/gdal/wiki/rfc45_virtualmem">RFC 45</a>.</li>
 <li>Support for several resampling algorithms in RasterIO() API, per <a href="http://trac.osgeo.org/gdal/wiki/rfc51_rasterio_resampling_progress">RFC 51</a>.</li>
+<li>Support for rasters of very large dimensions, per <a href="https://trac.osgeo.org/gdal/wiki/rfc26_blockcache">RFC 26</a></li>
 <li>Improvements in <a href="http://erouault.blogspot.fr/2014/10/warping-overviews-and-warped-overviews.html">overview resampling and use of overviews in warping</a>.</li>
+<li>Upgrade of the JP2OpenJPEG (JPEG 2000) driver to comply with Inspire recommandations for orthoimagery, and GMLJP2 v2 standard support.</li>
 </ul>
 
 <p>
@@ -49,11 +55,13 @@ Writing of new <a href="http://gdal.org/formats_list.html">GDAL (Raster) Drivers
 <li><a href="http://gdal.org/frmt_mbtiles.html">MBTiles</a></li>
 <li><a href="http://gdal.org/frmt_ozi.html">OZI OZF2/OZFX3</a></li>
 <li><a href="http://gdal.org/frmt_pdf.html">Geospatial PDF</a></li>
+<li><a href="http://gdal.org/frmt_plmosaic.html">PLMosaic (Planet Labs Mosaics)</a></li>
 <li><a href="http://gdal.org/frmt_rasterlite.html">Rasterlite - Rasters in SQLite DB</a></li>
 <li><a href="http://gdal.org/frmt_various.html#RPFTOC">Raster Product Format/RPF (CADRG, CIB)</a></li>
 <li><a href="http://gdal.org/frmt_various.html#SNODAS">Snow Data Assimilation System</a></li>
 <li><a href="http://gdal.org/frmt_various.html#SRTMHGT">SRTM HGT Format</a></li>
 <li><a href="http://gdal.org/frmt_webp.html">WEBP</a></li>
+<li><a href="http://gdal.org/frmt_wmts.html">WMTS (Web Map Tile Service)</a></li>
 <li><a href="http://gdal.org/frmt_xyz.html">ASCII Gridded XYZ</a></li>
 <li><a href="http://gdal.org/frmt_various.html#ZMap">ZMap Plus Grid</a></li>
 </ul>
@@ -75,6 +83,7 @@ Writing of new <a href="http://gdal.org/ogr/ogr_formats.html">OGR (Vector) Drive
 <li><a href="http://gdal.org/ogr/drv_bna.html">Atlas BNA</a></li>
 <li><a href="http://gdal.org/ogr/drv_cartodb.html">CartoDB</a></li>
 <li><a href="http://gdal.org/ogr/drv_couchdb.html">CouchDB / GeoCouch</a></li>
+<li><a href="http://gdal.org/ogr/drv_csw.html">CSW (Catalog Services for the Web)</a></li>
 <li><a href="http://gdal.org/ogr/drv_edigeo.html">EDIGEO</a></li>
 <li><a href="http://gdal.org/ogr/drv_geomedia.html">Geomedia .mdb</a></li>
 <li><a href="http://gdal.org/ogr/drv_georss.html">GeoRSS</a></li>
@@ -91,6 +100,7 @@ Writing of new <a href="http://gdal.org/ogr/ogr_formats.html">OGR (Vector) Drive
 <li><a href="http://gdal.org/ogr/drv_osm.html">OpenStreetMap XML and PBF</a></li>
 <li><a href="http://gdal.org/ogr/drv_pdf.html">Geospatial PDF</a></li>
 <li><a href="http://gdal.org/ogr/drv_pds.html">PDS</a></li>
+<li><a href="http://gdal.org/drv_plscenes.html">PLScenes (Planet Labs Scenes)</a></li>
 <li><a href="http://gdal.org/ogr/drv_pgdump.html">PostgreSQL SQL dump</a></li>
 <li><a href="http://gdal.org/ogr/drv_segukooa.html">SEG-P1 / UKOOA P1/90</a></li>
 <li><a href="http://gdal.org/ogr/drv_segy.html">SEG-Y</a></li>
