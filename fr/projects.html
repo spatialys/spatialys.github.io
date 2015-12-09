@@ -13,7 +13,7 @@ Conception et implémentation de nombreuses fonctionnalités du coeur de GDAL/OG
 </p>
 <ul>
 <li>Unification des modèles de pilotes raster et vectoriel, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc46_gdal_ogr_unification">RFC 46</a>, pour GDAL 2.0.</li>
-<li>Utilisation du dialecte SQL de <a href="http://gdal.org/ogr/ogr_sql_sqlite.html">SQLite</a> dans OGR.</li>
+<li>Utilisation du dialecte SQL de <a href="http://gdal.org/ogr_sql_sqlite.html">SQLite</a> dans OGR.</li>
 <li>Gestion de plusieurs attributs géométriques par couche vectorielle, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc41_multiple_geometry_fields">RFC 41</a>.</li>
 <li>Gestion des géométries curvilignes, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc49_curve_geometries">RFC 49</a>.</li>
 <li>Gestion de sous-types pour les attributs des objets vectoriels, selon la <a href="http://trac.osgeo.org/gdal/wiki/rfc50_ogr_field_subtype">RFC 50</a>.</li>
@@ -71,56 +71,56 @@ Améliorations significatives dans les pilotes GDAL suivants :
 <li><a href="http://trac.osgeo.org/gdal/wiki/frmts_wtkraster.html">PostGIS Raster</a></li>
 </ul>
 <p>
-Ecriture de nouveaux <a href="http://gdal.org/ogr/ogr_formats.html">pilotes vecteur OGR</a>:
+Ecriture de nouveaux <a href="http://gdal.org/ogr_formats.html">pilotes vecteur OGR</a>:
 </p>
 <ul>
-<li><a href="http://gdal.org/ogr/drv_aeronavfaa.html">Aeronav FAA files</a></li>
-<li><a href="http://gdal.org/ogr/drv_arcgen.html">Arc/Info Generate</a></li>
-<li><a href="http://gdal.org/ogr/drv_bna.html">Atlas BNA</a></li>
-<li><a href="http://gdal.org/ogr/drv_cartodb.html">CartoDB</a></li>
-<li><a href="http://gdal.org/ogr/drv_couchdb.html">CouchDB / GeoCouch</a></li>
-<li><a href="http://gdal.org/ogr/drv_csw.html">CSW (Catalog Services for the Web)</a></li>
-<li><a href="http://gdal.org/ogr/drv_edigeo.html">EDIGEO</a></li>
-<li><a href="http://gdal.org/ogr/drv_geomedia.html">Geomedia .mdb</a></li>
-<li><a href="http://gdal.org/ogr/drv_georss.html">GeoRSS</a></li>
-<li><a href="http://gdal.org/ogr/drv_gft.html">Google Fusion Tables</a></li>
-<li><a href="http://gdal.org/ogr/drv_gpsbabel.html">GPSBabel</a></li>
-<li><a href="http://gdal.org/ogr/drv_gpx.html">GPX</a></li>
-<li><a href="http://gdal.org/ogr/drv_htf.html">Hydrographic Transfer Format</a></li>
-<li><a href="http://gdal.org/ogr/drv_idrisi.html">Idrisi Vector (.VCT)</a></li>
-<li><a href="http://gdal.org/ogr/drv_jml.html">OpenJUMP .jml</a></li>
-<li><a href="http://gdal.org/ogr/drv_mdb.html">Access MDB (PGeo et Geomedia)</a></li>
-<li><a href="http://gdal.org/ogr/drv_mongodb.html">MongoDB</a></li>
-<li><a href="http://gdal.org/ogr/drv_ods.html">Open Document Spreadsheet</a></li>
-<li><a href="http://gdal.org/ogr/drv_openair.html">OpenAir</a></li>
-<li><a href="http://gdal.org/ogr/drv_openfilegdb.html">OpenFileGDB</a></li>
-<li><a href="http://gdal.org/ogr/drv_osm.html">OpenStreetMap XML et PBF</a></li>
-<li><a href="http://gdal.org/ogr/drv_pdf.html">Geospatial PDF</a></li>
-<li><a href="http://gdal.org/ogr/drv_pds.html">PDS</a></li>
+<li><a href="http://gdal.org/drv_aeronavfaa.html">Aeronav FAA files</a></li>
+<li><a href="http://gdal.org/drv_arcgen.html">Arc/Info Generate</a></li>
+<li><a href="http://gdal.org/drv_bna.html">Atlas BNA</a></li>
+<li><a href="http://gdal.org/drv_cartodb.html">CartoDB</a></li>
+<li><a href="http://gdal.org/drv_couchdb.html">CouchDB / GeoCouch</a></li>
+<li><a href="http://gdal.org/drv_csw.html">CSW (Catalog Services for the Web)</a></li>
+<li><a href="http://gdal.org/drv_edigeo.html">EDIGEO</a></li>
+<li><a href="http://gdal.org/drv_geomedia.html">Geomedia .mdb</a></li>
+<li><a href="http://gdal.org/drv_georss.html">GeoRSS</a></li>
+<li><a href="http://gdal.org/drv_gft.html">Google Fusion Tables</a></li>
+<li><a href="http://gdal.org/drv_gpsbabel.html">GPSBabel</a></li>
+<li><a href="http://gdal.org/drv_gpx.html">GPX</a></li>
+<li><a href="http://gdal.org/drv_htf.html">Hydrographic Transfer Format</a></li>
+<li><a href="http://gdal.org/drv_idrisi.html">Idrisi Vector (.VCT)</a></li>
+<li><a href="http://gdal.org/drv_jml.html">OpenJUMP .jml</a></li>
+<li><a href="http://gdal.org/drv_mdb.html">Access MDB (PGeo et Geomedia)</a></li>
+<li><a href="http://gdal.org/drv_mongodb.html">MongoDB</a></li>
+<li><a href="http://gdal.org/drv_ods.html">Open Document Spreadsheet</a></li>
+<li><a href="http://gdal.org/drv_openair.html">OpenAir</a></li>
+<li><a href="http://gdal.org/drv_openfilegdb.html">OpenFileGDB</a></li>
+<li><a href="http://gdal.org/drv_osm.html">OpenStreetMap XML et PBF</a></li>
+<li><a href="http://gdal.org/drv_pdf.html">Geospatial PDF</a></li>
+<li><a href="http://gdal.org/drv_pds.html">PDS</a></li>
 <li><a href="http://gdal.org/drv_plscenes.html">PLScenes (Scènes de Planet Labs)</a></li>
-<li><a href="http://gdal.org/ogr/drv_pgdump.html">PostgreSQL SQL dump</a></li>
-<li><a href="http://gdal.org/ogr/drv_segukooa.html">SEG-P1 / UKOOA P1/90</a></li>
-<li><a href="http://gdal.org/ogr/drv_segy.html">SEG-Y</a></li>
-<li><a href="http://gdal.org/ogr/drv_sua.html">SUA</a></li>
-<li><a href="http://gdal.org/ogr/drv_svg.html">SVG</a></li>
-<li><a href="http://gdal.org/ogr/drv_wfs.html">OGC WFS (Web Feature Service)</a></li>
-<li><a href="http://gdal.org/ogr/drv_xls.html">MS Excel format</a></li>
-<li><a href="http://gdal.org/ogr/drv_xlsx.html">MS Office Open XML spreadsheet</a></li>
-<li><a href="http://gdal.org/ogr/drv_xplane.html">X-Plane/Flightgear aeronautical data</a></li>
+<li><a href="http://gdal.org/drv_pgdump.html">PostgreSQL SQL dump</a></li>
+<li><a href="http://gdal.org/drv_segukooa.html">SEG-P1 / UKOOA P1/90</a></li>
+<li><a href="http://gdal.org/drv_segy.html">SEG-Y</a></li>
+<li><a href="http://gdal.org/drv_sua.html">SUA</a></li>
+<li><a href="http://gdal.org/drv_svg.html">SVG</a></li>
+<li><a href="http://gdal.org/drv_wfs.html">OGC WFS (Web Feature Service)</a></li>
+<li><a href="http://gdal.org/drv_xls.html">MS Excel format</a></li>
+<li><a href="http://gdal.org/drv_xlsx.html">MS Office Open XML spreadsheet</a></li>
+<li><a href="http://gdal.org/drv_xplane.html">X-Plane/Flightgear aeronautical data</a></li>
 </ul>
 <p>
 Améliorations significatives dans les pilotes OGR suivants :
 </p>
 <ul>
-<li><a href="http://gdal.org/ogr/drv_gml.html">GML</a></li>
-<li><a href="http://gdal.org/ogr/drv_filegdb.html">ESRI FileGDB</a></li>
-<li><a href="http://gdal.org/ogr/drv_libkml.html">LIBKML</a> : travaux pour en faire une <a href="http://www.opengeospatial.org/blog/2028">Implémentation de Référence de la spécification OGC KML 2.2</a></li>
-<li><a href="http://gdal.org/ogr/drv_geopackage.html">GeoPackage</a></li>
-<li><a href="http://gdal.org/ogr/drv_mitab.html">MapInfo File</a></li>
-<li><a href="http://gdal.org/ogr/drv_pg.html">PostgreSQL/PostGIS</a></li>
-<li><a href="http://gdal.org/ogr/drv_shapefile.html">ESRI Shapefile</a></li>
-<li><a href="http://gdal.org/ogr/drv_sqlite.html">SQLite/SpatiaLite</a></li>
-<li><a href="http://gdal.org/ogr/drv_vrt.html">VRT - Virtual Datasource</a></li>
+<li><a href="http://gdal.org/drv_gml.html">GML</a></li>
+<li><a href="http://gdal.org/drv_filegdb.html">ESRI FileGDB</a></li>
+<li><a href="http://gdal.org/drv_libkml.html">LIBKML</a> : travaux pour en faire une <a href="http://www.opengeospatial.org/blog/2028">Implémentation de Référence de la spécification OGC KML 2.2</a></li>
+<li><a href="http://gdal.org/drv_geopackage.html">GeoPackage</a></li>
+<li><a href="http://gdal.org/drv_mitab.html">MapInfo File</a></li>
+<li><a href="http://gdal.org/drv_pg.html">PostgreSQL/PostGIS</a></li>
+<li><a href="http://gdal.org/drv_shapefile.html">ESRI Shapefile</a></li>
+<li><a href="http://gdal.org/drv_sqlite.html">SQLite/SpatiaLite</a></li>
+<li><a href="http://gdal.org/drv_vrt.html">VRT - Virtual Datasource</a></li>
 </ul>
 
 <p>
@@ -134,15 +134,15 @@ Revue de code et intégration des pilotes suivants :
 <ul>
 <li><a href="http://gdal.org/frmt_blx.html">Magellan BLX Topo (.blx, .xlb)</a></li>
 <li><a href="http://gdal.org/frmt_gta.html">Generic Tagged Arrays (.gta)</a></li>
-<li><a href="http://gdal.org/ogr/drv_gtm.html">GPSTrackMaker (.gtm, .gtz)</a></li>
+<li><a href="http://gdal.org/drv_gtm.html">GPSTrackMaker (.gtm, .gtz)</a></li>
 <li><a href="http://gdal.org/frmt_various.html#IRIS">IRIS</a></li>
 <li><a href="http://gdal.org/frmt_kea.html">KEA</a></li>
 <li><a href="http://gdal.org/frmt_map.html">OziExplorer .MAP</a></li>
 <li>Northwood/VerticalMapper Classified Grid Format .grc/.tab + Numeric Grid Format .grd/.tab</li>
 <li><a href="http://gdal.org/frmt_various.html#SAGA">SAGA GIS Binary format</a></li>
-<li><a href="http://gdal.org/ogr/drv_selafin.html">Selafin/Seraphin format</a></li>
+<li><a href="http://gdal.org/drv_selafin.html">Selafin/Seraphin format</a></li>
 <li><a href="http://trac.osgeo.org/gdal/ticket/3638">Norwegian SOSI Standard</a></li>
-<li><a href="http://gdal.org/ogr/drv_walk.html">Walk</a></li>
+<li><a href="http://gdal.org/drv_walk.html">Walk</a></li>
 </ul>
 
 <h2>Réalisations principales dans MapServer</h2>
