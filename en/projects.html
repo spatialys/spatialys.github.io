@@ -69,6 +69,7 @@ Significant enhancements to the following GDAL drivers :
 <ul>
 <li><a href="http://gdal.org/frmt_dted.html">Military Elevation Data (DTED)</a></li>
 <li><a href="http://gdal.org/frmt_gtiff.html">TIFF / BigTIFF / GeoTIFF (.tif)</a></li>
+<li><a href="http://gdal.org/frmt_isis3.html">ISIS3</a></li>
 <li><a href="http://gdal.org/frmt_nitf.html">NITF</a></li>
 <li><a href="http://trac.osgeo.org/gdal/wiki/frmts_wtkraster.html">PostGIS Raster</a></li>
 </ul>
@@ -85,6 +86,7 @@ Writing of new <a href="http://gdal.org/ogr_formats.html">OGR (Vector) Drivers</
 <li><a href="http://gdal.org/drv_edigeo.html">EDIGEO</a></li>
 <li><a href="http://gdal.org/drv_geomedia.html">Geomedia .mdb</a></li>
 <li><a href="http://gdal.org/drv_georss.html">GeoRSS</a></li>
+<li><a href="http://gdal.org/drv_gmlas.html">GMLAS (GML Application Schemas/Complex Features)</a></li>
 <li><a href="http://gdal.org/drv_gft.html">Google Fusion Tables</a></li>
 <li><a href="http://gdal.org/drv_gpsbabel.html">GPSBabel</a></li>
 <li><a href="http://gdal.org/drv_gpx.html">GPX</a></li>
@@ -129,6 +131,8 @@ Maintainer of the <a href="http://trac.osgeo.org/gdal/wiki/GdalOgrInPython">Pyth
 <a href="http://trac.osgeo.org/gdal/wiki/GdalOgrInJava">Java</a> bindings, and the <a href="http://gdal.org/java">documentation</a> of the latter one.
 </p>
 
+<p>Hundreds of security fixes.</p>
+
 <p>
 Code review and integration of the following drivers:
 </p>
@@ -165,8 +169,9 @@ Code review and integration of the following drivers:
 <h2>Key accomplishments in OpenJPEG library (JPEG2000 library)</h2>
 
 <ul>
-<li><a href="https://github.com/uclouvain/openjpeg/pull/783">Improvements in decoding time of code-blocks</a>, resulting in overall gains of 10-15%</li>
+<li>Several (<a href="https://github.com/uclouvain/openjpeg/pull/783">(1)</a> and <a href="https://github.com/uclouvain/openjpeg/pull/945">(2)</a>) improvements in decoding time of code-blocks, resulting in overall gains of 20%</li>
 <li><a href="https://github.com/uclouvain/openjpeg/pull/786">Parallelized decompression of decoding of code-blocks and wavelet transform</a></li>
+<li><a href="https://github.com/uclouvain/openjpeg/pull/957">IDWT 5x3 single-pass lifting and SSE2/AVX2 implementation</a></li>
 </ul>
 
 <h2>Other projects</h2>
