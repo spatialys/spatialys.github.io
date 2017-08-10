@@ -1,2 +1,2 @@
-highlighter: true
+highlighter: rouge
 permalink:   /:categories/:title
