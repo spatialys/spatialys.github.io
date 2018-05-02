@@ -35,8 +35,8 @@ if (navigator.browserLanguage)
     var language = navigator.browserLanguage;
 else
     var language = navigator.language;
-if (language.indexOf('fr') > -1) document.location.href = 'fr/home';
-else document.location.href = 'en/home';
+if (language.indexOf('fr') > -1) document.location.href = 'fr/home/';
+else document.location.href = 'en/home/';
 </script> 
 {% endif %}
 
@@ -53,15 +53,15 @@ else document.location.href = 'en/home';
 	<li{% if page.url == "/en/contact/" %} class="active"{% endif %}><a href="/en/contact">Contact</a></li>
     <li>
 {% if page.url contains "/services/" %}
-    <a href="/fr/services">
+    <a href="/fr/services/">
 {% elsif page.url contains "/projects/" %}
-    <a href="/fr/projects">
+    <a href="/fr/projects/">
 {% elsif page.url contains "/about/" %}
-    <a href="/fr/about">
+    <a href="/fr/about/">
 {% elsif page.url contains "/contact/" %}
-    <a href="/fr/contact">
+    <a href="/fr/contact/">
 {% else %}
-    <a href="/fr/home">
+    <a href="/fr/home/">
 {% endif %}
     Français</a></li>
 </ul>
@@ -69,7 +69,7 @@ else document.location.href = 'en/home';
 
 <div class="row">
 <div class="col-sm-3">
-<a class="text-muted" href="/en/home"><img src="/img/logo_small.png" alt="{{ site.description }}"/></a>
+<a class="text-muted" href="/en/home/"><img src="/img/logo_small.png" alt="{{ site.description }}"/></a>
 </div>
 <div class="col-sm-9">
     <h2 class="lead text-center">Professional geospatial services</h2>
