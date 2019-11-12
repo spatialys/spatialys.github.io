@@ -1,0 +1,146 @@
+---
+title: Crowdfunding
+permalink: en/crowdfunding/
+---
+{% include head.html %}
+
+<h1>Crowdfunding</h1>
+
+<div class="text-align-justify">
+Spatialys proposes different projects, related to the improvements of open source
+geospatial software on which we have recognized expertise (GDAL, PROJ, etc.),
+for which your financial contribution is needed to enable their fulfillment.
+The size of those projects is such that is hard to find a single sponsor
+to fund them.
+</div>
+
+<h2>Projects having not yet reached their funding target</h2>
+
+<a id="proj_remote_grids"></a>
+<h3>PROJ: use of remote grids</h3>
+
+<h4>1. Stakes</h4>
+<div class="text-align-justify">
+<a href="https://proj.org">PROJ</a> 6 brings undeniable advances in the management
+of coordinate transformations between datums, by relying on information available
+in the PROJ database. To get accurate
+results, most of the time a grid file is needed. The <a href="https://github.com/OSGeo/proj-datumgrid">
+proj-datumgrid</a> project centralizes all the grids that are available under
+an open data license, and bundles them in different archives split along big
+geographical regions of the world. That approach assumes that the user of PROJ
+has downloaded and installed those optional, but strongly recommended, packages,
+otherwise it will get inaccurate results. However there are use cases, like
+serverless compute solutions, where it is impossible to bundle of them given
+their size (currently more than 700 MB of uncompressed data, and growing) and
+the restrictions set by the cloud provider.
+</div>
+
+<h4>2. Summary of the improvements brought by this project</h4>
+<div class="text-align-justify">
+The goal of this project is to provide additional capabilities to PROJ (the
+use of grids locally available will remain the default behaviour) such that:
+<ul>
+<li>Grids will be hosted by a Content Delivery Network (CDN)</li>
+<li>Users no longer have to manually fetch grid files and place them in PROJ_LIB.</li>
+<li>Full and accurate capability of the software will no longer require hundreds
+of megabytes of grid shift files in advance, even if only just a few of them
+are needed for the transformations done by the user.</li>
+<li>Local caching of grid files, or even part of files, so that users end up
+mirroring what they actually use.</li>
+</ul>
+
+<h4>3. Detailed tasks</h4>
+<div class="text-align-justify">
+We have structure this work around three work packages, a core, and two optional,
+but strongly desirable additions.
+<ul>
+<li><b>Work Package 1 (core)</b>
+<ul>
+<li><a href="https://curl.haxx.se/">curl</a> will be an optional build dependency in
+autoconf/cmake (if curl available, used by default)</li>
+<li>Network access abstracted through an interface (with C callbacks through C 
+API) attached to the PROJ context, and curl used as the default implementation 
+when available.</li>
+<li>Download of grids will not be enabled by default, and i will require the user
+to set an environment variable or set an attribute on the PROJ context.</li>
+<li>When enabled, all grids known to PROJ in the database (that is in 
+grid_alternatives table) will be assumed to be available through the CDN, and 
+thus for sorting ad filtering logic in createOperations() will be treated as if 
+there are local files.</li>
+<li>Deep refactoring of the PROJ code dealing with grid use, so as to avoid
+to ingest everything in memory as done currently. This should also benefit to local access on big grids.</li>
+<li>Network access will only be attempted if the file doesn't exist locally.</li>
+<li>The network layer will use a in-memory cache of chunks like GDAL <a href="https://gdal.org/user/virtual_file_systems.html#vsicurl-http-https-ftp-files-random-access">/vsicurl/</a>, both to limit the number of small GET requests and have caching effect.</li>
+<li>In download mode, download failures will be propagated as PROJ errors for 
+coordinate computations.</li>
+<li>The currently supported grid formats (CTable2, NTv1, NTv2 .gsb, GTX), using a line-based 
+approach, will still be used.</li>
+<li>Upload of the content of existing proj-datumgrid on the CDN storage.</li>
+</ul>
+</li>
+
+<li><b>Work Package 2 (local disk cache)</b>
+<ul>
+<li>a SQLite3 database, located in a user writable directory, will hold
+partially downloaded chunks grid files</li>
+<li>Access to it will be thread-safe and multiprocess-safe.</li>
+</ul>
+
+<li><b>Work Package 3 (tiled GeoTIFF files for grids)</b>
+<ul>
+<li>Tiles are better suited for piece-wise download than scanline oriented 
+formats (although this is a bit difficult to anticipate how much benefit this 
+will give concretely).</li>
+<li>GeoTIFF is a well known format that has more tools to deal with.
+A number of websites with grids in that format. TIFF has built-in capability to
+add metadata, whereas dedicated grid formats have often few and limited provision
+for them.</li>
+<li>As we cannot use libgeotiff, since libgeotiff uses PROJ, a minimal parsing
+of GeoTIFF information (extraction of the upper left pixel coordinate and
+resolution from the GeoKeys) will be done in the PROJ codebase.</li>
+<li>libtiff will be added as an optional dependency, but required to be able to
+use GeoTIFF grids, and required to be able to use the download capability.
+Grids distributed on the CDN will only be in GeoTIFF format, while grids
+distributed as proj-datumgrid will be available with two options:
+with .gsb/.gtx files or with GeoTIFF file.</li>
+<li>The NTv2 format has an extra capability when compared to other formats, which is the 
+possibility to have sub-grids. This is for example used by the original Canadian NTV2 gid,
+ntv2_0.gsb. However the way such subgrids are organized in the NTv2 format is not
+cloud optimized (the descriptor of each all subgrid is immediately before the data
+of the subgrid, so they are spread all over the file, and 
+opening that NTv2 file thus may require a lot of seeks). In a TIFF storage, we 
+could implement this subgrid concept with the TIFF IFD concept, and use a 
+technique similar to Cloud Optimized GeoTIFF (COG) files where the descriptors
+for all subgrids would be put at the beginning of the file, so they can be fetched
+in a single GET request. So that subtask includes improvement in the GDAL GTiff
+driver to be able to write such an optimized TIFF file from a source dataset with
+subdatasets, and make PROJ to be able to use it.</li>
+</ul>
+
+</ul>
+</div>
+
+<h4>4. Costs and state of funding</h4>
+<div class="text-align-justify">
+<ul>
+<li><b>WP 1</b> (core). Funding target: 8000 euros. Already collected: 4000 euros
+<li><b>WP 2</b> (local disk cache). Funding target: 2000 euros. Already collected: 1000 euros
+<li><b>WP 2</b> (GeoTIFF grids). Funding target: 4800 euros. Already collected: 2400 euros
+</ul>
+<p>
+==> Please <a href="/en/contact/">contact</a> us for any questions and if you wish to financially support this
+project.
+</p>
+</div>
+
+
+<h2>Past projects</h2>
+
+<h3>GDAL Coordinate System Barn Raising</h3>
+<div class="text-align-justify">
+The <a href="https://gdalbarn.com/">gdalbarn.com</a> website is dedicated to
+this successful compaign which led to the release of PROJ 6.0, GDAL 3.0 and
+libgeotiff 1.5.
+</div>
+
+{% include foot.html %}
