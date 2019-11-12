@@ -46,11 +46,12 @@ else document.location.href = 'en/home/';
 
 <div class="masthead">
 <ul class="nav nav-pills pull-right">
-	<li{% if page.url == "/en/home/" %} class="active"{% endif %}{% if page.url == "/" %} class="active"{% endif %}><a href="/en/home/">Home</a></li>
+    <li{% if page.url == "/en/home/" %} class="active"{% endif %}{% if page.url == "/" %} class="active"{% endif %}><a href="/en/home/">Home</a></li>
     <li{% if page.url == "/en/services/" %} class="active"{% endif %}><a href="/en/services/">Services</a></li>
-	<li{% if page.url contains "/en/projects/" %} class="active"{% endif %}><a href="/en/projects/">Projects</a></li>
+    <li{% if page.url contains "/en/projects/" %} class="active"{% endif %}><a href="/en/projects/">Projects</a></li>
+    <li{% if page.url contains "/en/crowdfunding/" %} class="active"{% endif %}><a href="/en/crowdfunding/">Crowdfunding</a></li>
     <li{% if page.url == "/en/about/" %} class="active"{% endif %}><a href="/en/about/">About</a></li>
-	<li{% if page.url == "/en/contact/" %} class="active"{% endif %}><a href="/en/contact/">Contact</a></li>
+    <li{% if page.url == "/en/contact/" %} class="active"{% endif %}><a href="/en/contact/">Contact</a></li>
     <li>
 {% if page.url contains "/services/" %}
     <a href="/fr/services/">
